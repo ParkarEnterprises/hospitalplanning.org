@@ -1,17 +1,23 @@
 <?php
 
-if($_POST["submit"]) {
-    $recipient="khalilparkar55@gmail.com";
-    $subject="Form to email message";
-    $sender=$_POST["sender"];
-    $senderEmail=$_POST["senderEmail"];
-    $message=$_POST["message"];
+ if(isset($_GET['email_address']) && !empty($_GET['email_address'])){
+    $emailAddress = $_GET['email_address'];
+    }
 
-    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+        if(isset($_GET['name']) && !empty($_GET['name'])){
+    $name= $_GET['name'];
+    }
 
-    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
+        $to      = $emailAddress;
+        $subject = 'the subject';
+        $message = 'hello ' . $name;
+        $headers = 'From: youremail@example.com' . "\r\n" .
+            'Reply-To: youremail@example.com' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
 
-    $thankYou="<p>Thank you! Your message has been sent.</p>";
-}
+        if(!mail($to, $subject, $message, $headers))
+        {
+            die('There was an error sending out the email');
+        }
 
 ?>
