@@ -974,9 +974,11 @@
                             <h5 align="right" style="color:#1b0cc5; padding-right:1px;">HOSPITAL / HEALTHCARE BUSINESS & PROJECT CONSULTANTS</h5>
                             <br/><br/>
                             <h3>Contact:</h3>
-                            <p><br/> In Vancouver, Canada<br/>
+                            <p><br/>Vancouver, Canada<br/>
                                 <b>Khalil Parkar</b><br/> Tel: +1-604-562-0785</p>
                             <h4>Please fill out the form below and we will get back to you as soon as possible</h4>    
+                                
+                                <?=$thankYou ?>    
                                 <form method="post" action="contact.php">
                                     <label>Name:</label>
                                     <input name="sender">
@@ -984,8 +986,8 @@
                                     <label>Email address:</label>
                                     <input name="senderEmail">
                             
-                                    <br /><label>Message:</label>
-                                    <textarea rows="5" cols="20" name="message"></textarea>
+                                    <br /><label>Message:</label> <br />
+                                    <textarea rows="5" cols="20" name="message"></textarea><br />
                             
                                     <input type="submit" name="Submit">
                                 </form>
